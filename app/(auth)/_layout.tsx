@@ -19,9 +19,8 @@ const Layout = () => {
                     />
 
                 </View>
-
+                <Slot />
             </ScrollView>
-            <Slot />
         </KeyboardAvoidingView>
     )
 }
