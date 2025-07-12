@@ -96,7 +96,6 @@ async function seed(): Promise<void> {
         );
         categoryMap[cat.name] = doc.$id;
     }
-    console.log(`category done`)
 
     // 3. Create Customizations
     const customizationMap: Record<string, string> = {};
@@ -113,8 +112,6 @@ async function seed(): Promise<void> {
         );
         customizationMap[cus.name] = doc.$id;
     }
-    console.log(`customization done`)
-
 
     // 4. Create Menu Items
     const menuMap: Record<string, string> = {};
@@ -136,7 +133,6 @@ async function seed(): Promise<void> {
                 categories: categoryMap[item.category_name],
             }
         );
-        console.log(`menu done`)
 
         menuMap[item.name] = doc.$id;
 
@@ -152,8 +148,6 @@ async function seed(): Promise<void> {
                 }
             );
         }
-        console.log(`menu customizaion done`)
-
     }
 
     console.log("✅ Seeding complete.");
