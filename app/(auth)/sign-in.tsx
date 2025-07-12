@@ -4,7 +4,7 @@ import { signIn } from '@/lib/appwrite'
 import * as Sentry from "@sentry/react-native"
 import { Link, router } from 'expo-router'
 import React, { useState } from 'react'
-import { Alert, Button, Text, View } from 'react-native'
+import { Alert, Text, View } from 'react-native'
 
 const SignIn = () => {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -58,7 +58,6 @@ const SignIn = () => {
           Sign Up
         </Link>
       </View>
-      <Button title='Try!' onPress={ () => { Sentry.captureException(new Error('First error')) }}/>
     </View>
   )
 }

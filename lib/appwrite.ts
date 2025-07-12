@@ -1,12 +1,17 @@
 import { CreateUserPrams, SignInParams } from "@/type"
-import { Account, Avatars, Client, Databases, ID, Query } from "react-native-appwrite"
+import { Account, Avatars, Client, Databases, ID, Query, Storage } from "react-native-appwrite"
 
 export const appwriteConfig = {
     endpoint: process.env.EXPO_PUBLIC_APPWRITE_ENDPOINT,
     platform: "com.mikiyas.fooddeliveryapp",
     projectId: process.env.EXPO_PUBLIC_APPWRITE_PROJECT_ID,
     databaseId: '687153bc0014dbe2fdf0',
-    userCollectionId: '687153f8002f351db633'
+    userCollectionId: '687153f8002f351db633',
+    categoryCollectionId: '6872a20f000d4584ffe2',
+    menuCollectionId: '6872a2990002901f1024',
+    customizationCollectionId: '6872a3d700243a4c8ed1',
+    menuCustomizationCollectionId: '6872a4bc001f22afe9a9',
+    bucketId: '6872a5e4001da38cd8e8'
 }
 
 // client connect to appwrite 
@@ -19,8 +24,11 @@ client.setEndpoint(appwriteConfig.endpoint!)
 export const account = new Account(client)
 // Appwrite client databases
 export const databases = new Databases(client)
+// Appwrite avatars
 export const avatars = new Avatars(client)
 
+// Appwrite Storage or bucket
+export const storage = new Storage(client)
 
 // sign up
 export const createUser = async ({ email, name, password }: CreateUserPrams) => {
